@@ -17,10 +17,10 @@ let imgWidth = 220;//固定图片的宽度
  */
 function createImgs () {
     for (let i = 0 ; i <= 40 ; i++) {
-        let src = 'img/' + i + '.jpg';
+        let src = 'image/' + i + '.jpg';
         let img = document.createElement('img');
         img.src = src;
-        img.style.width = imgWidth;
+        img.style.width = imgWidth + 'px';
         divContainer.appendChild(img);
         img.onload = function () {
             setPosition();
@@ -46,7 +46,7 @@ function setPosition () {
         //更新数组下一项的高度
         let index = nextTops.indexOf(minTop);//找到使用的第几列的top
 
-        nextTops[index] = img.height + info.space;
+        nextTops[index] += img.height + info.space;
         //设置横坐标
         let left = (index + 1) * info.space + index * imgWidth;
         img.style.left = left + 'px';
@@ -75,7 +75,7 @@ function getMin (arr) {
 function getMax (arr) {
     let max = arr[0];
     for (let i = 0 ; i < arr.length ; i++) {
-        if (arr[i] > min) {
+        if (arr[i] > max) {
             max = arr[i]
         }
     }
