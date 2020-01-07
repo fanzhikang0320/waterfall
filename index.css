@@ -1,0 +1,15 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.container{
+    position: relative;
+    width: 90%;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+.container img{
+    position: absolute;
+    transition: 0.3s;
+}
